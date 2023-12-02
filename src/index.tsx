@@ -18,7 +18,7 @@ root.render(
       {(elem: Book) => (
         <>
           <dt>
-            <a href={`https://wings.msn.to/books/$(elem.isbn)/$(elem.isbn).jpg`}>
+            <a href={`https://wings.msn.to/books/${elem.isbn}/${elem.isbn}.jpg`}>
               {elem.title} ({elem.price}円)
             </a>
           </dt>
