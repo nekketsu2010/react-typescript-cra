@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
-// import StateBasic from './StateBasic';
-// import StyledPanel from './StyledPanel';
-import ListTemplate from './ListTemplate';
-import books from './books';
-import type { Book } from './Book'
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -14,18 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ListTemplate src={books}>
-      {(elem: Book) => (
-        <>
-          <dt>
-            <a href={`https://wings.msn.to/books/${elem.isbn}/${elem.isbn}.jpg`}>
-              {elem.title} ({elem.price}円)
-            </a>
-          </dt>
-          <dd>{elem.summary}</dd>
-        </>
-      )}
-    </ListTemplate>
+    <App />
   </React.StrictMode>
 );
 

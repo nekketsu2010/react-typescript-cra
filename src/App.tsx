@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useState } from "react";
 import './App.css';
+import TaskForm from './TaskForm';
+import TaskList from './TaskList';
+import { Task } from './Task';
 
 function App() {
+  const [taskList, setTaskList] = useState(
+    [
+      {name:'test1', done:false},
+      {name:'test2', done:true},
+      {name:'test3', done:false}  
+    ]
+  );
+
+  const update = (task: Task) => {
+    setTaskList(
+      [...taskList, task]
+    );
+    console.log(taskList);
+  }
+  const deleteTask = (index: number) => {
+    taskList.splice(index, 1)
+    setTaskList(
+      [...taskList]
+    );
+    console.log(taskList);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TaskForm onUpdate={update} />
+      <TaskList taskList={taskList} onUpdate={deleteTask} />
     </div>
   );
 }
