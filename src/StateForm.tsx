@@ -28,6 +28,7 @@ export default function StateForm() {
                 <input id="age" name="age" type="number" value={form.age} onChange={handleForm} />
             </div>
             <button type="button" onClick={show}>送信</button>
+            <p>{form.name}({form.age}歳)さん</p>
         </form>
     );
 }
