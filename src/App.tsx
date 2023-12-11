@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import FormRadio from './FormRadio';
+import FormCheck from './FormCheck';
 
 function App() {
   return (
     <div className="App">
-      <FormRadio />
+      <FormCheck />
     </div>
   );
 }
