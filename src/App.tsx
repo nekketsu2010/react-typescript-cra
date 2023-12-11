@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import FormTextarea from './FormTextarea';
+import FormSelect from './FormSelect';
 
 function App() {
   return (
     <div className="App">
-      <FormTextarea />
+      <FormSelect />
     </div>
   );
 }
