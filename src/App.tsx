@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import FormList from './FormList';
+import FormRadio from './FormRadio';
 
 function App() {
   return (
     <div className="App">
-      <FormList />
+      <FormRadio />
     </div>
   );
 }
