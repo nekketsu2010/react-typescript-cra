@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import FormCheck from './FormCheck';
+import FormCheckMulti from './FormCheckMulti';
 
 function App() {
   return (
     <div className="App">
-      <FormCheck />
+      <FormCheckMulti />
     </div>
   );
 }
