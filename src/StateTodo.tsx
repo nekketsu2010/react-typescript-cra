@@ -26,6 +26,7 @@ export default function StateTodo() {
                 isDone: false
             }
         ]);
+        setTitle('');
     };
 
     return (
