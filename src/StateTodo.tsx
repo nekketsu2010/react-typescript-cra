@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './StateTodo.css';
 
 type Todo = {
     id: number,
@@ -29,6 +30,19 @@ export default function StateTodo() {
         setTitle('');
     };
 
+    const handleDone = (e: React.MouseEvent<HTMLButtonElement>) => {
+        setTodo(todo.map(item => {
+            if (item.id === Number(e.currentTarget.dataset.id)) {
+                return {
+                    ...item,
+                    isDone: true
+                };
+            } else {
+                return item;
+            }
+        }));
+    }
+
     return (
         <div>
             <label>
@@ -39,7 +53,10 @@ export default function StateTodo() {
             <hr />
             <ul>
                 {todo.map(item => (
-                    <li key={item.id}>{item.title}</li>
+                    <li key={item.id} className={item.isDone ? 'done' : ''}>
+                        {item.title}
+                        <button type="button" onClick={handleDone} data-id={item.id}>済</button>
+                    </li>
                 ))}
             </ul>
         </div>
