@@ -41,7 +41,7 @@ export default function StateTodo() {
                 return item;
             }
         }));
-    }
+    };
 
     return (
         <div>
