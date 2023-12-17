@@ -12,6 +12,7 @@ let maxId = 0;
 export default function StateTodo() {
     const [title, setTitle] = useState('');
     const [todo, setTodo] = useState([] as Todo[]);
+    const [desc, setDesc] = useState(true);
 
     const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(e.target.value);
@@ -47,6 +48,19 @@ export default function StateTodo() {
         setTodo(todo.filter(item => item.id !== Number(e.currentTarget.dataset.id)));
     };
 
+    const handleSort = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const sorted = [...todo];
+        sorted.sort((m, n) => {
+            if (desc) {
+                return n.created.getTime() - m.created.getTime();
+            } else {
+                return m.created.getTime() - n.created.getTime();
+            }
+        });
+        setDesc(d => !d);
+        setTodo(sorted);
+    }
+
     return (
         <div>
             <label>
@@ -54,6 +68,7 @@ export default function StateTodo() {
                 <input type="text" name="title" value={title} onChange={handleChangeTitle} />
             </label>
             <button type="button" onClick={handleClick}>追加</button>
+            <button type="button" onClick={handleSort}>ソート ({desc ? '↑' : '↓'})</button>
             <hr />
             <ul>
                 {todo.map(item => (
