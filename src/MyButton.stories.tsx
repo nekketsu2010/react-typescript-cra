@@ -2,9 +2,30 @@ import { MyButton } from "./MyButton";
 
 export default {
     title: 'MyApp/MyButton',
-    component: MyButton
+    component: MyButton,
+    args: {
+        label: 'ボタン'
+    }
 };
 
-export const Index = () => <MyButton primary label="ボタン" />;
+export const Index = {
+    args: {
+        primary: true,
+        size: 'medium',
+        onClick: () => console.log('Hello, Storybook!!!')
+    }
+};
 
-export const White = () => <MyButton size="small" label="ボタン" backgroundColor="#fff" />;
+export const White = {
+    args: {
+        size: 'small',
+        backgroundColor: '#fff'
+    }
+};
+
+export const Yellow = {
+    args: {
+        ...White.args,
+        backgroundColor: 'lightyellow'
+    }
+}
