@@ -5,7 +5,12 @@ export default {
     component: MyButton,
     args: {
         label: 'ボタン'
-    }
+    },
+    argTypes: {
+        size: {
+            control: { type: 'select' },
+        },
+    },
 };
 
 export const Index = {
