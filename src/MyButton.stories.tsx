@@ -1,3 +1,5 @@
+import { userEvent, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import { MyButton } from "./MyButton";
 
 export default {
@@ -17,7 +19,15 @@ export const Index = {
     args: {
         primary: true,
         size: 'medium',
-        onClick: () => console.log('Hello, Storybook!!!')
+        // イベントハンドラーは無効化（テストが落ちてしまうため）
+        // onClick: () => console.log('Hello, Storybook!!!')
+    },
+    play: async ({ args, canvasElement }) => {
+        const canvas = within(canvasElement);
+        const button = canvas.getByRole('button');
+        await userEvent.click(button);
+        await userEvent.click(button);
+        expect(args.onClick).toHaveBeenCalledTimes(2);
     }
 };
 
