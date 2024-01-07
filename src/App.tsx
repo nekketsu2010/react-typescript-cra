@@ -1,11 +1,11 @@
 import React from 'react';
 // import './App.css';
-import StateTodo from './StateTodo';
+import QueryPre from './QueryPre';
 
 function App() {
   return (
     <div className="App">
-      <StateTodo />
+      <QueryPre />
     </div>
   );
 }
