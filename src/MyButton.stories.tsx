@@ -16,6 +16,7 @@ export default {
     parameters: {
         layout: 'centered',
     },
+    tags: ['autodocs']
 };
 
 export const Index = {
