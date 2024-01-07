@@ -1,3 +1,4 @@
+import { type Meta, type StoryObj } from '@storybook/react';
 import { userEvent, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { MyButton } from "./MyButton";
@@ -16,9 +17,11 @@ export default {
     parameters: {
         layout: 'centered',
     },
-};
+} as Meta<typeof MyButton>;
 
-export const Index = {
+type Story = StoryObj<typeof MyButton>;
+
+export const Index: Story = {
     args: {
         primary: true,
         size: 'medium',
@@ -34,14 +37,14 @@ export const Index = {
     }
 };
 
-export const White = {
+export const White: Story = {
     args: {
         size: 'small',
         backgroundColor: '#fff'
     }
 };
 
-export const Yellow = {
+export const Yellow: Story = {
     args: {
         ...White.args,
         backgroundColor: 'lightyellow'
