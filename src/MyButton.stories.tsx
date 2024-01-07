@@ -13,19 +13,9 @@ export default {
             control: { type: 'select' },
         },
     },
-    decorators: [
-        (Story) => (
-            <div style={{
-                height: 150,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: '#ccc'            
-            }}>
-                <Story />
-            </div>
-        )
-    ]
+    parameters: {
+        layout: 'centered',
+    },
 };
 
 export const Index = {
