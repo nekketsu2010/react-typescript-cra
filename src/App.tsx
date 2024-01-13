@@ -1,11 +1,11 @@
 import React from 'react';
 // import './App.css';
-import StateEffect from './StateEffect';
+import HookTimer from './HookTimer';
 
 function App() {
   return (
     <div className="App">
-      <StateEffect init={0} />
+      <HookTimer init={10} />
     </div>
   );
 }
