@@ -1,11 +1,11 @@
 import React from 'react';
 // import './App.css';
-import QueryPre from './QueryPre';
+import StateEffect from './StateEffect';
 
 function App() {
   return (
     <div className="App">
-      <QueryPre />
+      <StateEffect init={0} />
     </div>
   );
 }
