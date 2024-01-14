@@ -12,9 +12,9 @@ export default function HookRefNg() {
     };
 
     const handleEnd = () => {
+        console.log(`終了ボタンを押しました。${id}`);
         window.clearInterval(id!);
         id = null;
-        console.log(`終了ボタンを押しました。${id}`);
     };
 
     return (
