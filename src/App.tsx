@@ -1,11 +1,11 @@
 import React from 'react';
 // import './App.css';
-import HookEffect from './HookEffect';
+import HookRefNg from './HookRefNg';
 
 function App() {
   return (
     <div className="App">
-      <HookEffect init={10} />
+      <HookRefNg />
     </div>
   );
 }
