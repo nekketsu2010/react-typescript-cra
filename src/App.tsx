@@ -1,11 +1,11 @@
 import React from 'react';
 // import './App.css';
-import HookRef from './HookRef';
+import HookRefForward from './HookRefForward';
 
 function App() {
   return (
     <div className="App">
-      <HookRef />
+      <HookRefForward />
     </div>
   );
 }
