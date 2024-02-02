@@ -1,11 +1,11 @@
 import React from 'react';
 // import './App.css';
-import HookCallbackRef from './HookCallbackRef';
+import HookReducer from './HookReducer';
 
 function App() {
   return (
     <div className="App">
-      <HookCallbackRef />
+      <HookReducer init={0} />
     </div>
   );
 }
