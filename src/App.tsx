@@ -1,11 +1,11 @@
 import React from 'react';
 // import './App.css';
-import HookReducerUp from './HookReducerUp';
+import HookReducerInit from './HookReducerInit';
 
 function App() {
   return (
     <div className="App">
-      <HookReducerUp init={0} />
+      <HookReducerInit init={0} />
     </div>
   );
 }
