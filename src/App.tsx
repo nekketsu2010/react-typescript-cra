@@ -1,11 +1,14 @@
 import React from 'react';
 // import './App.css';
-import QueryPre from './QueryPre';
+import MyThemeProvider from './MyThemeProvider';
+import HookThemeButton from './HookThemeButton';
 
 function App() {
   return (
     <div className="App">
-      <QueryPre />
+      <MyThemeProvider>
+        <HookThemeButton />
+      </MyThemeProvider>
     </div>
   );
 }
