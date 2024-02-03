@@ -1,11 +1,14 @@
 import React from 'react';
 // import './App.css';
-import HookContext from './HookContext';
+import MyThemeProvider from './MyThemeProvider';
+import HookThemeButton from './HookThemeButton';
 
 function App() {
   return (
     <div className="App">
-      <HookContext />
+      <MyThemeProvider>
+        <HookThemeButton />
+      </MyThemeProvider>
     </div>
   );
 }
